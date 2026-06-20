@@ -14,30 +14,34 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <Navbar />
       <Hero />
+
+      {/* Full-bleed after hero */}
+      <ImageBreak images={[galleryImages[0]]} layout="single" />
+
       <Countdown />
 
-      {/* Photo break: after countdown */}
-      <ImageBreak images={[galleryImages[0], galleryImages[1]]} layout="duo" />
+      {/* Duo after countdown */}
+      <ImageBreak images={[galleryImages[1], galleryImages[2]]} layout="duo" />
 
       <Details />
 
-      {/* Photo break: full-bleed after details */}
-      <ImageBreak images={[galleryImages[2]]} layout="single" />
+      {/* Trio after details */}
+      <ImageBreak images={[galleryImages[3], galleryImages[4], galleryImages[5]]} layout="trio" />
 
       <Entourage />
 
-      {/* Photo break: trio after entourage */}
-      <ImageBreak images={[galleryImages[3], galleryImages[4], galleryImages[5]]} layout="trio" />
+      {/* Duo after entourage */}
+      <ImageBreak images={[galleryImages[6], galleryImages[7]]} layout="duo" />
 
       <BibleVerses />
 
-      {/* Photo break: duo before RSVP */}
-      <ImageBreak images={[galleryImages[6], galleryImages[7]]} layout="duo" />
+      {/* Full-bleed before RSVP */}
+      <ImageBreak images={[galleryImages[8]]} layout="single" />
 
       <RSVP />
 
-      {/* Photo break: full-bleed before footer */}
-      <ImageBreak images={[galleryImages[8]]} layout="single" />
+      {/* Trio reusing favorites before footer */}
+      <ImageBreak images={[galleryImages[0], galleryImages[4], galleryImages[8]]} layout="trio" />
 
       <Footer />
     </main>
