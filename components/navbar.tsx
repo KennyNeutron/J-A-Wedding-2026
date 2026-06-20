@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { name: "Home", href: "#home" },
   { name: "Details", href: "#details" },
   { name: "Entourage", href: "#entourage" },
+  { name: "Gallery", href: "#gallery" },
   { name: "RSVP", href: "#rsvp" },
 ];
 

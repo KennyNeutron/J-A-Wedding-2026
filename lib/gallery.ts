@@ -1,48 +1,33 @@
-// Official wedding photos — replace alt text with actual descriptions as needed.
-export const galleryImages = [
-  {
-    id: 1,
-    src: "/images/IMG_20260609_211625.jpg",
-    alt: "Wedding photo 1",
-  },
-  {
-    id: 2,
-    src: "/images/IMG_20260609_213238.jpg",
-    alt: "Wedding photo 2",
-  },
-  {
-    id: 3,
-    src: "/images/IMG_20260609_214938.jpg",
-    alt: "Wedding photo 3",
-  },
-  {
-    id: 4,
-    src: "/images/IMG_20260609_215314.jpg",
-    alt: "Wedding photo 4",
-  },
-  {
-    id: 5,
-    src: "/images/IMG_20260609_215826.jpg",
-    alt: "Wedding photo 5",
-  },
-  {
-    id: 6,
-    src: "/images/IMG_20260609_220104.jpg",
-    alt: "Wedding photo 6",
-  },
-  {
-    id: 7,
-    src: "/images/IMG_20260609_221142.jpg",
-    alt: "Wedding photo 7",
-  },
-  {
-    id: 8,
-    src: "/images/IMG_20260609_221412.jpg",
-    alt: "Wedding photo 8",
-  },
-  {
-    id: 9,
-    src: "/images/IMG_20260609_222639.jpg",
-    alt: "Wedding photo 9",
-  },
-];
+import fs from "node:fs";
+import path from "node:path";
+
+export interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+export function getGalleryImages(): GalleryImage[] {
+  const imageDir = path.join(process.cwd(), "public/images");
+  
+  if (!fs.existsSync(imageDir)) {
+    return [];
+  }
+
+  const files = fs.readdirSync(imageDir);
+  const supportedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
+  
+  const images = files
+    .filter((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return supportedExtensions.includes(ext);
+    })
+    .sort() // Sort alphabetically
+    .map((file, index) => ({
+      id: `img-${index}`,
+      src: `/images/${file}`,
+      alt: `James and Angela wedding photo ${index + 1}`,
+    }));
+
+  return images;
+}

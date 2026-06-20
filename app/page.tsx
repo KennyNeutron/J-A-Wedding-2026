@@ -1,48 +1,48 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { Countdown } from "@/components/countdown";
 import { Details } from "@/components/details";
 import { Entourage } from "@/components/entourage";
-import { ImageBreak } from "@/components/image-break";
-import { BibleVerses } from "@/components/bible-verses";
+import { Gallery } from "@/components/gallery";
+import { BibleVerse } from "@/components/bible-verse";
 import { RSVP } from "@/components/rsvp";
 import { Footer } from "@/components/footer";
-import { galleryImages } from "@/lib/gallery";
+import { getGalleryImages } from "@/lib/gallery";
 
 export default function Home() {
+  const galleryImages = getGalleryImages();
+
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col bg-background">
       <Navbar />
+      
       <Hero />
-
-      {/* Full-bleed after hero */}
-      <ImageBreak images={[galleryImages[0]]} layout="single" />
-
-      <Countdown />
-
-      {/* Duo after countdown */}
-      <ImageBreak images={[galleryImages[1], galleryImages[2]]} layout="duo" />
-
-      <Details />
-
-      {/* Trio after details */}
-      <ImageBreak images={[galleryImages[3], galleryImages[4], galleryImages[5]]} layout="trio" />
-
-      <Entourage />
-
-      {/* Duo after entourage */}
-      <ImageBreak images={[galleryImages[6], galleryImages[7]]} layout="duo" />
-
-      <BibleVerses />
-
-      {/* Full-bleed before RSVP */}
-      <ImageBreak images={[galleryImages[8]]} layout="single" />
-
-      <RSVP />
-
-      {/* Trio reusing favorites before footer */}
-      <ImageBreak images={[galleryImages[0], galleryImages[4], galleryImages[8]]} layout="trio" />
-
+      
+      <div className="bg-[#FAF8FB]">
+        <BibleVerse index={0} />
+      </div>
+      
+      <div className="bg-[#FDFBFE]">
+        <Details />
+      </div>
+      
+      <div className="bg-[#F7F1FC]">
+        <BibleVerse index={1} />
+      </div>
+      
+      <div className="bg-[#FAF8FB]">
+        <Entourage />
+      </div>
+      
+      <Gallery images={galleryImages} />
+      
+      <div className="bg-[#F7F1FC]">
+        <BibleVerse index={2} />
+      </div>
+      
+      <div className="bg-[#FAF8FB]">
+        <RSVP />
+      </div>
+      
       <Footer />
     </main>
   );
