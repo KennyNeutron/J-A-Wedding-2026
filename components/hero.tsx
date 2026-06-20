@@ -19,7 +19,7 @@ export function Hero() {
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://picsum.photos/1920/1080?wedding,couple')",
+          backgroundImage: "url('/img_main.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/30 mix-blend-multiply" />

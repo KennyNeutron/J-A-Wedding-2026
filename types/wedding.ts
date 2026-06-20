@@ -1,9 +1,3 @@
-export interface StoryMilestone {
-  id: string;
-  title: string;
-  date: string;
-  description: string;
-}
 
 export interface BibleVerse {
   reference: string;

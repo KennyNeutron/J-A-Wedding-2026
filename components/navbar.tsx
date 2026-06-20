@@ -6,10 +6,8 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { name: "Home", href: "#home" },
-  { name: "Story", href: "#story" },
   { name: "Details", href: "#details" },
   { name: "Entourage", href: "#entourage" },
-  { name: "Gallery", href: "#gallery" },
   { name: "RSVP", href: "#rsvp" },
 ];
 
@@ -26,7 +24,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     const element = document.querySelector(href);
@@ -41,7 +42,7 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-surface/90 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
+          : "bg-transparent py-6",
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -62,7 +63,7 @@ export function Navbar() {
               onClick={(e) => handleClick(e, link.href)}
               className={cn(
                 "text-sm tracking-widest uppercase transition-colors hover:text-primary",
-                isScrolled ? "text-text" : "text-white drop-shadow-md"
+                isScrolled ? "text-text" : "text-white drop-shadow-md",
               )}
             >
               {link.name}
@@ -74,7 +75,7 @@ export function Navbar() {
         <button
           className={cn(
             "md:hidden p-2",
-            isScrolled ? "text-text" : "text-white"
+            isScrolled ? "text-text" : "text-white",
           )}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
