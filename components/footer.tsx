@@ -10,7 +10,7 @@ export function Footer() {
         <p className="font-sans text-sm tracking-widest uppercase mb-8 text-secondary/80">
           {DETAILS.dateStr}
         </p>
-        <p className="font-serif text-lg mb-8">{DETAILS.hashtag}</p>
+        <p className="font-serif text-lg mb-8 dark:text-black">{DETAILS.hashtag}</p>
         <div className="w-16 h-px bg-secondary/30 mx-auto mb-8" />
         <p className="text-sm text-secondary/60">
           Made with love. <br />

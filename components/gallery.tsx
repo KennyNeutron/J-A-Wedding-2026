@@ -40,7 +40,7 @@ export function Gallery({ images }: GalleryProps) {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-[#FDFBFE] overflow-hidden">
+    <section id="gallery" className="py-24 bg-bg-alt-3 overflow-hidden transition-colors duration-300">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

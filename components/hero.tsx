@@ -36,7 +36,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex-1 flex flex-col items-center justify-center"
         >
-          <h2 className="font-sans tracking-[0.3em] uppercase text-xs md:text-sm mb-6 text-text-muted">
+          <h2 className="font-sans tracking-[0.3em] uppercase text-xs md:text-sm mb-6 text-white drop-shadow-md">
             We are getting married
           </h2>
           

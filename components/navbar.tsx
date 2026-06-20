@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_LINKS = [
   { name: "Home", href: "#home" },
@@ -52,11 +53,11 @@ export function Navbar() {
           onClick={(e) => handleClick(e, "#home")}
           className="font-script text-3xl text-primary"
         >
-          J & A
+          James & Angela
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-8 items-center">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
@@ -70,18 +71,26 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
+          <div className={cn(isScrolled ? "text-text" : "text-white drop-shadow-md")}>
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className={cn(
-            "md:hidden p-2",
-            isScrolled ? "text-text" : "text-white",
-          )}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        {/* Mobile Toggle & Theme */}
+        <div className="flex items-center gap-2 md:hidden">
+          <div className={cn(isScrolled ? "text-text" : "text-white drop-shadow-md")}>
+            <ThemeToggle />
+          </div>
+          <button
+            className={cn(
+              "p-2",
+              isScrolled ? "text-text" : "text-white",
+            )}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

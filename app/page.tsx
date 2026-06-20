@@ -12,34 +12,34 @@ export default function Home() {
   const galleryImages = getGalleryImages();
 
   return (
-    <main className="flex min-h-screen flex-col bg-background">
+    <main className="flex min-h-screen flex-col bg-background text-text transition-colors duration-300">
       <Navbar />
       
       <Hero />
       
-      <div className="bg-[#FAF8FB]">
+      <div className="bg-bg-alt-1 transition-colors duration-300">
         <BibleVerse index={0} />
       </div>
       
-      <div className="bg-[#FDFBFE]">
+      <div className="bg-bg-alt-3 transition-colors duration-300">
         <Details />
       </div>
       
-      <div className="bg-[#F7F1FC]">
+      <div className="bg-bg-alt-2 transition-colors duration-300">
         <BibleVerse index={1} />
       </div>
       
-      <div className="bg-[#FAF8FB]">
+      <div className="bg-bg-alt-1 transition-colors duration-300">
         <Entourage />
       </div>
       
       <Gallery images={galleryImages} />
       
-      <div className="bg-[#F7F1FC]">
+      <div className="bg-bg-alt-2 transition-colors duration-300">
         <BibleVerse index={2} />
       </div>
       
-      <div className="bg-[#FAF8FB]">
+      <div className="bg-bg-alt-1 transition-colors duration-300">
         <RSVP />
       </div>
       

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
@@ -13,6 +15,10 @@
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   
+  --color-bg-alt-1: var(--bg-alt-1);
+  --color-bg-alt-2: var(--bg-alt-2);
+  --color-bg-alt-3: var(--bg-alt-3);
+  
   /* shadcn UI variables mapping */
   --color-foreground: var(--text);
   --color-border: var(--secondary);
@@ -20,7 +26,7 @@
   --color-ring: var(--primary);
   --color-primary-foreground: #FFFFFF;
   --color-secondary-foreground: var(--text);
-  --color-muted: #F3EDF7;
+  --color-muted: var(--bg-alt-2);
   --color-muted-foreground: var(--text-muted);
   --color-destructive: #ef4444;
   --color-destructive-foreground: #FFFFFF;
@@ -30,16 +36,34 @@
   --color-popover-foreground: var(--text);
 }
 
-@layer base {
-  :root {
-    --primary: #B46AD7;
-    --secondary: #C9B4E5;
-    --accent: #B88DAE;
-    --background: #FAF8FB;
-    --surface: #FFFFFF;
-    --text: #2E2A32;
-    --text-muted: #6B6470;
-  }
+/* Light mode — unlayered so it doesn't get overridden by @theme */
+:root {
+  --primary: #B46AD7;
+  --secondary: #C9B4E5;
+  --accent: #B88DAE;
+  --background: #FAF8FB;
+  --surface: #FFFFFF;
+  --text: #2E2A32;
+  --text-muted: #6B6470;
+  
+  --bg-alt-1: #FAF8FB;
+  --bg-alt-2: #F7F1FC;
+  --bg-alt-3: #FDFBFE;
+}
+
+/* Dark mode — unlayered, .dark class has higher specificity than :root */
+.dark {
+  --primary: #C88DE3;
+  --secondary: #6B5B7D;
+  --accent: #C9A0BE;
+  --background: #151217;
+  --surface: #1E1A22;
+  --text: #F0EDF2;
+  --text-muted: #A39BA8;
+  
+  --bg-alt-1: #17131A;
+  --bg-alt-2: #1B161F;
+  --bg-alt-3: #1A161D;
 }
 
 @layer base {
@@ -48,13 +72,14 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 /* Utilities */
 @layer utilities {
   .bg-soft-gradient {
-    background: linear-gradient(135deg, var(--background) 0%, #f4eef9 100%);
+    background: linear-gradient(135deg, var(--background) 0%, var(--bg-alt-2) 100%);
   }
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
