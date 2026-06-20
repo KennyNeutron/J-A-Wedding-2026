@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-script: var(--font-great-vibes);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  
+  /* shadcn UI variables mapping */
+  --color-foreground: var(--text);
+  --color-border: var(--secondary);
+  --color-input: var(--secondary);
+  --color-ring: var(--primary);
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary-foreground: var(--text);
+  --color-muted: #F3EDF7;
+  --color-muted-foreground: var(--text-muted);
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #FFFFFF;
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text);
+}
+
+@layer base {
+  :root {
+    --primary: #B46AD7;
+    --secondary: #C9B4E5;
+    --accent: #B88DAE;
+    --background: #FAF8FB;
+    --surface: #FFFFFF;
+    --text: #2E2A32;
+    --text-muted: #6B6470;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .bg-soft-gradient {
+    background: linear-gradient(135deg, var(--background) 0%, #f4eef9 100%);
+  }
+}
