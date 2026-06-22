@@ -49,7 +49,7 @@ export function Gallery({ images }: GalleryProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <span className="font-script text-3xl text-accent block mb-2">
+          <span className="font-script text-3xl text-accent block mb-2 overflow-visible">
             James & Angela
           </span>
           <h2 className="font-serif text-4xl md:text-5xl text-primary mb-4">

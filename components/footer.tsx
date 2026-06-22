@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-text text-white py-16 text-center">
       <div className="container mx-auto px-4">
-        <h2 className="font-script text-4xl mb-4 text-secondary">
+        <h2 className="font-script text-4xl mb-4 text-secondary overflow-visible">
           {COUPLE.groom} & {COUPLE.bride}
         </h2>
         <p className="font-sans text-sm tracking-widest uppercase mb-8 text-secondary/80">

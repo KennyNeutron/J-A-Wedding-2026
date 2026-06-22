@@ -37,7 +37,7 @@ export function Entourage() {
                 section.title === "Principal Sponsors" ? "md:col-span-2 lg:col-span-3" : ""
               }`}
             >
-              <h3 className="font-script text-3xl text-accent mb-6">{section.title}</h3>
+              <h3 className="font-script text-3xl text-accent mb-6 overflow-visible">{section.title}</h3>
               <div className="flex flex-col gap-3">
                 {section.names.map((name) => (
                   <span key={name} className="font-serif text-lg text-text">

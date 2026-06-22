@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Great_Vibes } from "next/font/google";
+import { Inter, Playfair_Display, Sacramento } from "next/font/google";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const greatVibes = Great_Vibes({
-  variable: "--font-great-vibes",
+const sacramento = Sacramento({
+  variable: "--font-sacramento",
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -36,11 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${playfair.variable} ${greatVibes.variable} antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} ${playfair.variable} ${sacramento.variable} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

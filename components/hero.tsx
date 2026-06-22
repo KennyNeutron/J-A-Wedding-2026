@@ -40,7 +40,7 @@ export function Hero() {
             We are getting married
           </h2>
           
-          <h1 className="font-script text-6xl md:text-8xl lg:text-9xl mb-6 text-primary drop-shadow-sm">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl xl:text-9xl mb-6 text-primary drop-shadow-sm leading-[1.1] overflow-visible px-[0.2em]">
             {COUPLE.groom} & {COUPLE.bride}
           </h1>
           
@@ -75,7 +75,7 @@ export function Hero() {
               className="w-full max-w-2xl mx-auto"
             >
               {isOver ? (
-                <div className="text-xl md:text-3xl font-script text-accent">
+                <div className="text-xl md:text-3xl font-script text-accent leading-[1.1] overflow-visible">
                   We&apos;re Getting Married Today!
                 </div>
               ) : (
