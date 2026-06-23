@@ -11,6 +11,7 @@ export function Entourage() {
     { title: "Principal Sponsors", names: ENTOURAGE.principalSponsors },
     { title: "Best Man", names: ENTOURAGE.bestMan },
     { title: "Maid of Honor", names: ENTOURAGE.maidOfHonor },
+    { title: "Secondary Sponsors", names: ENTOURAGE.secondarySponsors },
     { title: "Groomsmen", names: ENTOURAGE.groomsmen },
     { title: "Bridesmaids", names: ENTOURAGE.bridesmaids },
   ];
@@ -37,7 +38,9 @@ export function Entourage() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={`bg-surface p-8 rounded-2xl shadow-sm text-center border border-secondary/10 ${
-                section.title === "Officiating Pastor" || section.title === "Principal Sponsors"
+                section.title === "Officiating Pastor" ||
+                section.title === "Principal Sponsors" ||
+                section.title === "Secondary Sponsors"
                   ? "md:col-span-2 lg:col-span-6"
                   : "md:col-span-1 lg:col-span-3"
               }`}
@@ -48,11 +51,22 @@ export function Entourage() {
                   ? "grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto"
                   : "flex flex-col gap-3"
               }>
-                {section.names.map((name) => (
-                  <span key={name} className="font-serif text-lg text-text">
-                    {name}
-                  </span>
-                ))}
+                {section.names.map((name) => {
+                  if (name.includes("\n")) {
+                    const [role, actualName] = name.split("\n");
+                    return (
+                      <div key={name} className="mb-2">
+                        <div className="text-sm text-text-muted italic mb-1">{role}</div>
+                        <div className="font-serif text-lg text-text">{actualName}</div>
+                      </div>
+                    );
+                  }
+                  return (
+                    <span key={name} className="font-serif text-lg text-text">
+                      {name}
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

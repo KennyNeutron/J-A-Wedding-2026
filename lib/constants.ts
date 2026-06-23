@@ -61,8 +61,13 @@ export const ENTOURAGE = {
     "Mr. & Mrs. Nokhwan",
     "N’ Insookj Choi",
   ],
-  bestMan: ["Michael Danda"],
-  maidOfHonor: ["Sarah Cruz"],
+  bestMan: ["Pee-Jay Miro Cerbo"],
+  maidOfHonor: ["Jubilee Joy Dela Rama"],
+  secondarySponsors: [
+    "To Light Our Path\nMr. & Mrs. Arve Lebios",
+    "To Clothe us as One\nMr. & Mrs. Ronel Blanca",
+    "Carry our Symbol of Faith\nMr. & Mrs. Peter John Canoy",
+  ],
   groomsmen: ["David Reyes", "Kevin Tan", "Joshua Santos"],
   bridesmaids: ["Rachel Lim", "Jessica Wong", "Amanda Lee"],
 };
