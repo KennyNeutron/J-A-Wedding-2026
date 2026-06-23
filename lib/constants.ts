@@ -68,8 +68,30 @@ export const ENTOURAGE = {
     "To Clothe us as One\nMr. & Mrs. Ronel Blanca",
     "Carry our Symbol of Faith\nMr. & Mrs. Peter John Canoy",
   ],
-  groomsmen: ["David Reyes", "Kevin Tan", "Joshua Santos"],
-  bridesmaids: ["Rachel Lim", "Jessica Wong", "Amanda Lee"],
+  groomsmen: [
+    "Jasrell Danda",
+    "Bryan Bayawan",
+    "Angelo Onit",
+    "Jade Pun-an",
+    "Francis Matthew Bacsal",
+    "Salem Concepcion",
+    "Ian Lloyd M. Lucañas",
+    "Jaydee Ranario",
+    "Japrongie Nawal",
+    "Glenn Lubiano",
+  ],
+  bridesmaids: [
+    "K Dela Rama",
+    "Judea Pun-an",
+    "Jasphin Danda",
+    "Alaiza Culay",
+    "Leslie Jane Bayawan",
+    "Ella Jane Axalan",
+    "Jamaica Krys Agravante",
+    "Jacklyn Farrah Kate A. Africa",
+    "Shekaina Onet",
+    "Khye O. Calamba",
+  ],
 };
 
 export const BIBLE_VERSES = [
