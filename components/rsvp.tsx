@@ -39,21 +39,24 @@ export function RSVP() {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      const response = await fetch("https://formsubmit.co/ajax/juanrobotix@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
+      const response = await fetch(
+        "https://formsubmit.co/ajax/21onetangela@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "Wedding RSVP",
+            Name: data.fullName,
+            Email: data.email,
+            Attending: data.isAttending === "yes" ? "Yes" : "No",
+            "Guests Count": data.isAttending === "yes" ? data.guestsCount : 0,
+            Message: data.message || "No message left.",
+          }),
         },
-        body: JSON.stringify({
-          "_subject": "Wedding RSVP",
-          "Name": data.fullName,
-          "Email": data.email,
-          "Attending": data.isAttending === "yes" ? "Yes" : "No",
-          "Guests Count": data.isAttending === "yes" ? data.guestsCount : 0,
-          "Message": data.message || "No message left.",
-        }),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Failed to send submission");
@@ -81,7 +84,9 @@ export function RSVP() {
           className="bg-surface p-8 md:p-12 rounded-3xl shadow-sm border border-secondary/20"
         >
           <div className="text-center mb-10">
-            <h2 className="font-serif text-4xl md:text-5xl text-primary mb-4">RSVP</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-primary mb-4">
+              RSVP
+            </h2>
             <p className="text-text-muted">Kindly respond by July 7, 2026</p>
           </div>
 
@@ -95,7 +100,9 @@ export function RSVP() {
                 className={errors.fullName ? "border-destructive" : ""}
               />
               {errors.fullName && (
-                <p className="text-sm text-destructive">{errors.fullName.message}</p>
+                <p className="text-sm text-destructive">
+                  {errors.fullName.message}
+                </p>
               )}
             </div>
 
@@ -109,7 +116,9 @@ export function RSVP() {
                 className={errors.email ? "border-destructive" : ""}
               />
               {errors.email && (
-                <p className="text-sm text-destructive">{errors.email.message}</p>
+                <p className="text-sm text-destructive">
+                  {errors.email.message}
+                </p>
               )}
             </div>
 
@@ -132,11 +141,15 @@ export function RSVP() {
                     className="w-4 h-4 text-primary"
                     {...register("isAttending")}
                   />
-                  <span className="text-sm font-medium">Regretfully Declines</span>
+                  <span className="text-sm font-medium">
+                    Regretfully Declines
+                  </span>
                 </label>
               </div>
               {errors.isAttending && (
-                <p className="text-sm text-destructive">{errors.isAttending.message}</p>
+                <p className="text-sm text-destructive">
+                  {errors.isAttending.message}
+                </p>
               )}
             </div>
 
@@ -146,7 +159,9 @@ export function RSVP() {
                 animate={{ opacity: 1, height: "auto" }}
                 className="space-y-2"
               >
-                <Label htmlFor="guestsCount">Number of Guests (including yourself)</Label>
+                <Label htmlFor="guestsCount">
+                  Number of Guests (including yourself)
+                </Label>
                 <Input
                   id="guestsCount"
                   type="number"
