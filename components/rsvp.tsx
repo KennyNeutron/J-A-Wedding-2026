@@ -38,14 +38,37 @@ export function RSVP() {
   const isAttending = watch("isAttending") === "yes";
 
   const onSubmit = async (data: FormValues) => {
-    // Simulate network request
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("RSVP Data:", data);
-    toast.success("RSVP Submitted Successfully", {
-      description: "Thank you for responding!",
-    });
-    reset();
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/juanrobotix@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          "_subject": "Wedding RSVP",
+          "Name": data.fullName,
+          "Email": data.email,
+          "Attending": data.isAttending === "yes" ? "Yes" : "No",
+          "Guests Count": data.isAttending === "yes" ? data.guestsCount : 0,
+          "Message": data.message || "No message left.",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send submission");
+      }
+
+      toast.success("RSVP Submitted Successfully", {
+        description: "Thank you for responding!",
+      });
+      reset();
+    } catch (error) {
+      console.error("RSVP Error:", error);
+      toast.error("Submission Failed", {
+        description: "There was an error sending your RSVP. Please try again.",
+      });
+    }
   };
 
   return (
