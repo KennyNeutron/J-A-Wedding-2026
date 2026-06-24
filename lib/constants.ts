@@ -18,10 +18,7 @@ export const DETAILS = {
 
 export const ENTOURAGE = {
   officiatingPastor: ["Ptr. Amelito B. Dela Rama"],
-  groomsParents: [
-    "Mrs. Flordeliza C. Danda",
-    "Mr. Alex Pun-an",
-  ],
+  groomsParents: ["Mrs. Flordeliza C. Danda", "Mr. Alex Pun-an"],
   bridesParents: [
     "Mrs. Jocellie O. Culay",
     "Mr. Jonathan O. Culay",
@@ -87,7 +84,7 @@ export const ENTOURAGE = {
     "Alaiza Culay",
     "Leslie Jane Bayawan",
     "Ella Jane Axalan",
-    "Jamaica Krys Agravante",
+    "Rose Ann Sanchez",
     "Jacklyn Farrah Kate A. Africa",
     "Shekaina Onet",
     "Khye O. Calamba",
